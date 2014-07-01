@@ -1,1 +1,7 @@
 exclude: [README.md]
+name: "Service Worker"
+url: "http://serviceworker.org/"
+permalink: /:year/:month/:day/:title.html
+markdown: redcarpet
+paginate: 5
+paginate_path: "/page-:num"

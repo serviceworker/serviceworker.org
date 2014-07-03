@@ -1,0 +1,23 @@
+-
+  name: "Jake Archibald"
+  title: "Developer advocate at Google"
+  about: "Hello, I’m Jake and that is my face. I’m a developer advocate for Google Chrome."
+  url:  "http://jakearchibald.com/"
+  twitter: "@jaffathecake"
+  github: "jakearchibald"
+  img: "jake_archibald.jpg"
+-
+  name: "Natasha Rooney"
+  title: "Web Technologist at GSMA"
+  about: "Web Technologist at GSMA, Co-Chair of W3C Web & Mobile Interest Group, Otaku. I seem to be living in Japan."
+  url: "http://thisnatasha.com/"
+  twitter: "@thisnatasha"
+  img: "natasha_rooney.jpeg"
+-
+  name: "Alex Russell"
+  title: "Software Engineer at Google"
+  about: "Bringing the web platform into the late-90's, one spec at a time."
+  url:  "http://infrequently.org/"
+  twitter: "@slightlylate"
+  img: "alex_russell.jpeg"
+ 

@@ -1,0 +1,8 @@
+{% assign page = include.content %}
+{% if page.youtube_id %}
+    <iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/{{ page.youtube_id }}?rel=0" frameborder="0" allowfullscreen></iframe>
+{% elsif page.speakerdeck_id %}
+    <script async class="speakerdeck-embed" data-id="283bae106c9401311c8c0664b5dcafc8" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+{% elsif page.slideshare_id %}
+    <iframe src="//www.slideshare.net/slideshow/embed_code/{{ page.slideshare_id }}?rel=0"  width="512" height="421" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+{% endif %}

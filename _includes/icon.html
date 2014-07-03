@@ -1,0 +1,15 @@
+{% assign position="" %}
+{% if include.position == "right" %}
+  {% assign position="pull-right " %}
+{% endif %}
+{% case include.type %}
+  {% when "slides" %}
+    {% assign icon="keynote" %}
+  {% when "presentation" %}
+    {% assign icon="film" %}
+  {% when "article" %}
+    {% assign icon="bookmark" %}
+{% else %}
+    {% assign icon = include.type %}
+{% endcase %}
+<span class="{{position}}glyphicon glyphicon-{{ icon }}"></span>

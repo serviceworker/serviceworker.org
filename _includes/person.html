@@ -1,0 +1,45 @@
+{% if include.person and include.person.name %}
+  {% assign person = include.person %}
+{% else %}
+  {% for p in site.data.people %}{% if p.name == include.person %}
+    {% assign person = p %}
+  {% endif %}{% endfor %}
+{% endif %}
+
+{% if person %}
+  {% if person.img %}
+    {% assign src = person.img %}
+    {% capture alt %}Avatar of {{ person.name }}{% endcapture %}
+  {% else %}
+    {% assign src = "default.png" %}
+    {% assign alt = "Default avatar" %}
+  {% endif %}
+  
+  {% if person.url %}
+    {% capture name %}<a href="{{ person.url }}">{{ person.name }}</a>{% endcapture %}
+  {% else %}
+    {% assign name = person.name %}
+  {% endif %}
+
+  {% if person.about %}
+    {% assign caption = "" %}
+      {% if person.title %}
+        {% capture subheading %} <small> - {{ person.title }}</small>{% endcapture %}
+      {% else %}
+        {% assign subheading = "" %}
+      {% endif %}
+    {% assign body = person.about %}
+  {% else %}
+    {% assign caption = " caption" %}
+    {% assign subheading = "" %}
+    {% assign body = person.title %}
+  {% endif %}
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/img/people/{{ src }}" alt="{{ alt }}">
+    <div class="media-body{{ caption }}">
+      <h4 class="media-heading">{{ name }}{{ subheading }}</h4>
+      {{ body | markdownify }}
+    </div>
+  </div>
+{% endif %}

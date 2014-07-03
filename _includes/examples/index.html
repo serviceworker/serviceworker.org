@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script>
+        // scope defaults to "/*"
+        navigator.serviceWorker.register("/service-worker.js").then(function(serviceWorker) {
+            console.log("success!");
+            // To use the serviceWorker immediately,
+            // you might call window.location.reload()
+        });
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

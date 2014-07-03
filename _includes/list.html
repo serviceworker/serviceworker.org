@@ -1,0 +1,22 @@
+{% assign n = 2 %}
+{% assign col = 12 | divided_by: n %}
+<div class="container">
+{% for item in include.collection %}
+    {% assign mod = forloop.index | modulo: n %}
+    {% if mod == 1 %}
+      <div class="row">
+    {% endif %}
+
+        <div class="col-md-{{ col }}">
+            <h3>{% include icon.html type=include.type %} {{ item.title }}</h3>
+            {% include embed.html content=item %}
+            {{ page.content }}
+            {% include cta.html url=page.url body="Read more" %}
+        </div>
+
+    {% if mod == 0 or forloop.last %}
+      </div>
+    {% endif %}
+{% endfor %}
+</div>
+

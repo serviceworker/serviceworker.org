@@ -17,19 +17,22 @@ this.oninstall = function(e) {
         ]);
     }));
 };
-
+ 
 this.onfetch = function(e) {
     e.respondWith(
         // Check to see if request is found in cache
         caches.match(e.request).catch(function() {
-            // It's not? Prime the cache.
+            // It's not? Prime the cache and return the response.
             return caches.get("visited").then(function(visited) {
-                return visited.add(e.request);
+                return fetch(e.request).then(function(response) {
+                    visited.put(e.request, response);
+                    // Don't bother waiting, respond already.
+                    return response;
+                });
             });
         }).catch(function() {
-            // Connection is down? Simply fallback to a cached page.
+            // Connection is down? Simply fallback to a pre-cached page.
             return caches.match("/fallback.html");
         });
     );
 };
-

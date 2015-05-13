@@ -14,6 +14,19 @@ featurettes:
     title: The Cache API
     body: A simple cache for content retrieved from the Web (or generated), directly accessibly by the Service Worker.
 
+ourresources:
+  -
+    icon: cogwheels
+    title: Articles
+    body: A worker-like object that intercepts all network requests and lets you handle them in JavaScript.
+  -
+    icon: transfer
+    title: Presentations
+    body: XHR revamped.
+  -
+    icon: hdd
+    title: Slides
+    body: A simple cache for content retrieved from the Web (or generated), directly accessibly by the Service Worker.
 ---
 
 ## What are service workers?
@@ -23,6 +36,10 @@ It's a new API to enable offline Web apps. (Like AppCache but that doesn't suck.
 Three parts:
 
 {% include featurettes.html featurettes=page.featurettes col=3 %}
+
+## Resources?
+
+{% include featurettes.html featurettes=page.ourresources col=3 %}
 
 ## Show me code
 

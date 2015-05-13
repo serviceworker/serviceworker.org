@@ -11,7 +11,14 @@
             <h3>{% include icon.html type=include.type %} {{ item.title }}</h3>
             {% include embed.html content=item %}
             {{ page.content }}
-            {% include cta.html url=page.url body="Read more" %}
+            {% include cta.html url=page.utl body="Read more" %} <!-- change back to page.url if want to link to secondary page-->
+            {% if page.authors %}
+                {%for author in page.authors %}
+                    {% include person.html person=author %}
+                {% endfor %}
+            {% elsif page.author %}
+                {% include person.html person=page.author %}
+            {% endif %}
         </div>
 
     {% if mod == 0 or forloop.last %}
